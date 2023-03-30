@@ -1,0 +1,4 @@
+res://levels/world.tscn
+res://scripts/player.gd
+res://actors/playble/knight.tscn
+res://scripts/animation.gd

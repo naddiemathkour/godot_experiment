@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ianw11gidrrp"]
+
+[ext_resource type="PackedScene" uid="uid://doo7vmgkl5g7q" path="res://actors/playble/knight.tscn" id="1_toc35"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="2_7hvpg"]
+
+[node name="world" type="Node2D"]
+scale = Vector2(5, 5)
+
+[node name="player" parent="." instance=ExtResource("1_toc35")]
+position = Vector2(42, 55.4)
+script = ExtResource("2_7hvpg")
