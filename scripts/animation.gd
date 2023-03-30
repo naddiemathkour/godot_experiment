@@ -19,6 +19,13 @@ func get_input_axis():
 	if(Input.is_action_pressed("attack")):
 		play("3_strike_combo")
 		animation_unlocked = false
+	elif(Input.is_action_just_released("attack")):
+		stop();
+		animation_unlocked = true;
+	
+	if(Input.is_action_pressed("special_attack")):
+		play("special_attack")
+		animation_unlocked = false;
 
 func _physics_process(delta):
 	get_input_axis()
