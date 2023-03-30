@@ -260,7 +260,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("47_wtcp8")
 }],
-"loop": true,
+"loop": false,
 "name": &"3_strike_combo",
 "speed": 12.0
 }, {
