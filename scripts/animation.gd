@@ -1,7 +1,28 @@
 extends AnimatedSprite2D
 
+@onready var animation_lock = false
 
-# Called when the node enters the scene tree for the first time.
 func get_input_axis():
-	if (Input.is_action_pressed("move_up") || (Input.is_action_pressed("move_down")) || (Input.is_action_just_pressed("move_left")) || (Input.is_action_just_pressed("move_right"))):
-		play(&"run", 1.0, false)
+	var curr_vector = Input.get_vector("move_down", "move_up", "move_left", "move_right")
+
+	if (animation != "3_strike_combo"):
+		if (curr_vector == Vector2(0,0)):
+			play("idle")
+		else:
+			play("run")
+	if (Input.is_action_just_pressed("move_left")):
+		flip_h = true
+	elif (Input.is_action_just_pressed("move_right")):
+		flip_h = false
+	print(animation)
+
+	if(Input.is_action_pressed("attack")):
+		play("3_strike_combo")
+		animation_lock = true
+
+func _physics_process(delta):
+	get_input_axis()
+
+
+func _on_animation_finished():
+	stop()

@@ -488,10 +488,12 @@ size = Vector2(27, 46)
 
 [node name="player" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qrdtb")
-animation = &"2_strike_combo"
-frame_progress = 0.760845
+animation = &"3_strike_combo"
+frame_progress = 0.405443
 script = ExtResource("110_vkaha")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.5, 40)
 shape = SubResource("RectangleShape2D_5ww0y")
+
+[connection signal="animation_finished" from="player" to="player" method="_on_animation_finished"]
