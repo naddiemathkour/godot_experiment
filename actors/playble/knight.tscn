@@ -1,5 +1,6 @@
-[gd_scene load_steps=113 format=3 uid="uid://doo7vmgkl5g7q"]
+[gd_scene load_steps=114 format=3 uid="uid://doo7vmgkl5g7q"]
 
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_agxop"]
 [ext_resource type="Texture2D" uid="uid://mfof8o0iay58" path="res://assets/knight_assets/png/fire_knight/06_2_atk/2_atk_1.png" id="1_l4uav"]
 [ext_resource type="Texture2D" uid="uid://di8pfg8m581bv" path="res://assets/knight_assets/png/fire_knight/06_2_atk/2_atk_2.png" id="2_wtisk"]
 [ext_resource type="Texture2D" uid="uid://pd8tuyxuts3l" path="res://assets/knight_assets/png/fire_knight/06_2_atk/2_atk_3.png" id="3_0w31c"]
@@ -485,14 +486,20 @@ animations = [{
 size = Vector2(27, 46)
 
 [node name="warrior" type="CharacterBody2D"]
+script = ExtResource("1_agxop")
 
 [node name="player" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qrdtb")
-animation = &"special_attack"
+animation = &"2_strike_combo"
+frame_progress = 0.0817471
 script = ExtResource("110_vkaha")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.5, 40)
 shape = SubResource("RectangleShape2D_5ww0y")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(10, 10)
+zoom = Vector2(2, 2)
 
 [connection signal="animation_finished" from="player" to="player" method="_on_animation_finished"]
