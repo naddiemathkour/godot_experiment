@@ -131,7 +131,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1460b")
 }],
-"loop": true,
+"loop": false,
 "name": &"basic_attack",
 "speed": 8.0
 }, {
@@ -218,3 +218,5 @@ script = ExtResource("7_bmooa")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(5, 1)
 shape = SubResource("RectangleShape2D_i0rj7")
+
+[connection signal="animation_finished" from="basic_enemy_model" to="basic_enemy_model" method="_on_animation_finished"]
