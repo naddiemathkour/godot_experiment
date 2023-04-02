@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 @export var speed = 400
-@onready var movement_lock = false
 
 func get_input():
 	if ($player.animation != "special_attack"):

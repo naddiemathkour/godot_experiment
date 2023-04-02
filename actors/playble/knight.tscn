@@ -462,7 +462,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"special_attack",
-"speed": 10.0
+"speed": 16.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -489,13 +489,16 @@ size = Vector2(27, 46)
 script = ExtResource("1_agxop")
 
 [node name="player" type="AnimatedSprite2D" parent="."]
+position = Vector2(-145, -99)
 sprite_frames = SubResource("SpriteFrames_qrdtb")
-animation = &"2_strike_combo"
-frame_progress = 0.0817471
+animation = &"special_attack"
+frame = 17
+frame_progress = 1.0
+centered = false
 script = ExtResource("110_vkaha")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.5, 40)
+position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_5ww0y")
 
 [node name="Camera2D" type="Camera2D" parent="."]
